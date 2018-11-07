@@ -58,7 +58,12 @@ NETWORK=awsvpcConfiguration={subnets=[subnet-05aec45784839acf0,subnet-09c4f73b0c
 # You only need to run this once - check and see if it's available
 aws logs create-log-group --log-group-name one-time 2> /dev/null
 
-aws ecs run-task --cluster $CLUSTER --count 1 --launch-type FARGATE --task-definition $FAMILY:$REVISION --network-configuration $NETWORK
+aws ecs run-task \
+  --cluster $CLUSTER \
+  --count 1 \
+  --launch-type FARGATE \
+  --task-definition $FAMILY:$REVISION \
+  --network-configuration $NETWORK
 ```
 
 
