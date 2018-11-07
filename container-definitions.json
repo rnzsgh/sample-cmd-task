@@ -1,0 +1,27 @@
+{
+
+  "family": "one-time",
+  "cpu": "256",
+  "memory": "512",
+
+  "containerDefinitions": [
+      {
+          "name": "test",
+          "image": "",
+          "cpu": 256,
+          "memory": 512,
+          "essential": false,
+          "privileged": false,
+          "readonlyRootFilesystem": true,
+          "essential": true,
+          "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+              "awslogs-region": "us-east-1",
+               "awslogs-group": "one-time",
+               "awslogs-stream-prefix": "batch"
+            }
+          }
+      }
+  ]
+}
